@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block title %}Home | My Portfolio{% endblock %} {% block content %}
+<section class="bg-white shadow-md rounded-lg p-6 mb-8">
+	<h1 class="text-3xl font-bold mb-4">Welcome to My Portfolio</h1>
+	<p class="text-lg mb-4">
+		Hello! I'm a developer passionate about building amazing web applications.
+	</p>
+	<div class="flex space-x-4">
+		<a
+			href="/portfolio"
+			class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+			>View My Work</a
+		>
+		<a
+			href="/blog"
+			class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded"
+			>Read My Blog</a
+		>
+	</div>
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+	<div class="bg-white shadow-md rounded-lg p-6">
+		<h2 class="text-2xl font-bold mb-4">Latest Projects</h2>
+		<ul class="space-y-2">
+			{% for project in recent_projects %}
+			<li class="border-b pb-2">
+				<a
+					href="/portfolio/{{ project.slug }}"
+					class="text-blue-500 hover:underline"
+					>{{ project.title }}</a
+				>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+	<div class="bg-white shadow-md rounded-lg p-6">
+		<h2 class="text-2xl font-bold mb-4">Latest Blog Posts</h2>
+		<ul class="space-y-2">
+			{% for post in recent_posts %}
+			<li class="border-b pb-2">
+				<a href="/blog/{{ post.slug }}" class="text-blue-500 hover:underline"
+					>{{ post.title }}</a
+				>
+				<p class="text-sm text-gray-500">{{ post.date }}</p>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
+{% endblock %}

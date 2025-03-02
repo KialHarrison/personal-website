@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} | My Blog{% endblock %}
+
+{% block content %}
+<article class="bg-white shadow-md rounded-lg p-6 mb-8">
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold mb-2">{{ post.title }}</h1>
+        <div class="flex items-center text-gray-500 text-sm">
+            <span>{{ post.date }}</span>
+            {% if post.categories %}
+                <span class="mx-2">•</span>
+                <div class="flex space-x-2">
+                    {% for category in post.categories %}
+                        <span class="bg-gray-200 px-2 py-1 rounded">{{ category }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    {% if post.image %}
+        <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-64 object-cover mb-6 rounded">
+    {% endif %}
+    
+    <div class="prose max-w-none">
+        {{ post.content|safe }}
+    </div>
+</article>
+
+<div class="flex justify-between">
+    {% if prev_post %}
+        <a href="/blog/{{ prev_post.slug }}" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
+            ← {{ prev_post.title }}
+        </a>
+    {% else %}
+        <div></div>
+    {% endif %}
+    
+    {% if next_post %}
+        <a href="/blog/{{ next_post.slug }}" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">
+            {{ next_post.title }} →
+        </a>
+    {% else %}
+        <div></div>
+    {% endif %}
+</div>
+{% endblock %}
