@@ -34,7 +34,15 @@ def get_blog_posts():
         else:
             meta = {}
         
-        html_content = Markup(markdown.markdown(content))
+        html_content = Markup(markdown.markdown(
+            content,
+            extensions=[
+                'markdown.extensions.fenced_code',
+                'markdown.extensions.tables',
+                'markdown.extensions.codehilite',
+                'markdown.extensions.toc'
+            ]
+))
         
         title = meta.get('title', slug.replace('-', ' ').title())
         
@@ -49,9 +57,6 @@ def get_blog_posts():
         
         summary = meta.get('summary', html_content[:100].replace('<p>', '').replace('</p>', '') + '...')
         
-        categories = meta.get('categories', '').split(',')
-        categories = [cat.strip() for cat in categories if cat.strip()]
-        
         image = meta.get('image', '')
         
         posts.append({
@@ -60,7 +65,6 @@ def get_blog_posts():
             'date': date,
             'content': html_content,
             'summary': summary,
-            'categories': categories,
             'image': image
         })
     

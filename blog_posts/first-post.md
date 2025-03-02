@@ -2,7 +2,6 @@
 title: My First Blog Post
 date: 2023-08-15
 summary: This is my first blog post about web development.
-categories: web development, flask
 image: https://via.placeholder.com/800x400
 ---
 

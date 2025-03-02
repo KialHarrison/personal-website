@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}{{ post.title }} | My Blog{% endblock %}
+{% block extracss %}<link rel="stylesheet" href="/static/blogPostStyles.css">{% endblock %}
 
 {% block content %}
 <article class="bg-white shadow-md rounded-lg p-6 mb-8">

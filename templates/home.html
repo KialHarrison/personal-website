@@ -17,35 +17,4 @@
 		>
 	</div>
 </section>
-
-<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-	<div class="bg-white shadow-md rounded-lg p-6">
-		<h2 class="text-2xl font-bold mb-4">Latest Projects</h2>
-		<ul class="space-y-2">
-			{% for project in recent_projects %}
-			<li class="border-b pb-2">
-				<a
-					href="/portfolio/{{ project.slug }}"
-					class="text-blue-500 hover:underline"
-					>{{ project.title }}</a
-				>
-			</li>
-			{% endfor %}
-		</ul>
-	</div>
-
-	<div class="bg-white shadow-md rounded-lg p-6">
-		<h2 class="text-2xl font-bold mb-4">Latest Blog Posts</h2>
-		<ul class="space-y-2">
-			{% for post in recent_posts %}
-			<li class="border-b pb-2">
-				<a href="/blog/{{ post.slug }}" class="text-blue-500 hover:underline"
-					>{{ post.title }}</a
-				>
-				<p class="text-sm text-gray-500">{{ post.date }}</p>
-			</li>
-			{% endfor %}
-		</ul>
-	</div>
-</section>
 {% endblock %}
