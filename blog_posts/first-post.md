@@ -16,3 +16,14 @@ This is the content of my first blog post. You can write Markdown here.
 - List item 3
 
 [Link to website](https://example.com)
+
+```python
+def test_parse_front_matter():
+    expected = {
+        'title': 'My First Blog Post',
+        'date': '2023-08-15',
+        'summary': 'This is my first blog post about web development.',
+        'image': 'https://via.placeholder.com/800x400'
+    }
+    assert parse_front_matter(POST) == expected
+```

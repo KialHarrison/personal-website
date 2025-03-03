@@ -102,8 +102,8 @@ def _jinja2_filter_now(format_string):
 
 @app.route("/")
 def home():
-    blog_posts = get_blog_posts()[:3]  # Get 3 most recent posts
-    projects = get_portfolio_projects()[:3]  # Get 3 projects
+    blog_posts = get_blog_posts()[:3]
+    projects = get_portfolio_projects()[:3]
     
     return render_template('home.html', recent_posts=blog_posts, recent_projects=projects)
 

@@ -1,20 +1,25 @@
 {% extends "base.html" %} {% block title %}Home | My Portfolio{% endblock %} {% block content %}
-<section class="bg-white shadow-md rounded-lg p-6 mb-8">
-	<h1 class="text-3xl font-bold mb-4">Welcome to My Portfolio</h1>
-	<p class="text-lg mb-4">
-		Hello! I'm a developer passionate about building amazing web applications.
-	</p>
-	<div class="flex space-x-4">
-		<a
-			href="/portfolio"
-			class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
-			>View My Work</a
-		>
-		<a
-			href="/blog"
-			class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded"
-			>Read My Blog</a
-		>
+<section class="bg-black shadow-md rounded-lg p-6 mb-8">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+		<div class="bg-black p-4 rounded-lg shadow-md">
+			<h2 class="text-xl text-white font-bold mb-2">About Me</h2>
+			<p class="text-white">
+				I have been working as a web developer for over 5 years. I have
+				experience working with clients from different industries and
+				developing websites and web applications that meet their needs.
+			</p>
+		</div>
+		<div class="bg-black p-4 rounded-lg shadow-md">
+			<h2 class="text-xl text-white font-bold mb-2">My Skills</h2>
+			<ul class="text-white">
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JavaScript</li>
+				<li>Python</li>
+				<li>React</li>
+				<li>Django</li>
+			</ul>
+		</div>
 	</div>
 </section>
 {% endblock %}

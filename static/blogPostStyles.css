@@ -1,12 +1,44 @@
-<style>
-  .prose h1 { font-size: 2em; margin-bottom: 0.5em; }
-  .prose h2 { font-size: 1.5em; margin-bottom: 0.5em; }
-  .prose h3 { font-size: 1.17em; margin-bottom: 0.5em; }
-  .prose p { margin-bottom: 1em; }
-  .prose ul, .prose ol { margin-bottom: 1em; padding-left: 2em; }
-  .prose code { background-color: #f0f0f0; padding: 0.2em 0.4em; border-radius: 3px; }
-  .prose pre { background-color: #f0f0f0; padding: 1em; overflow-x: auto; margin-bottom: 1em; }
-  .prose blockquote { border-left: 4px solid #ccc; margin-left: 0; padding-left: 1em; }
-  .prose a { color: #0366d6; text-decoration: none; }
-  .prose a:hover { text-decoration: underline; }
-</style>
+.prose h1 {
+	font-size: 2em;
+	margin-bottom: 0.5em;
+}
+.prose h2 {
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
+}
+.prose h3 {
+	font-size: 1.17em;
+	margin-bottom: 0.5em;
+}
+.prose p {
+	margin-bottom: 1em;
+}
+.prose ul,
+.prose ol {
+	margin-bottom: 1em;
+	padding-left: 2em;
+}
+.prose code {
+	background-color: #525151;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+}
+.prose pre {
+	background-color: #525151;
+	padding: 1em;
+	overflow-x: auto;
+	margin-bottom: 1em;
+	border-radius: 12px;
+}
+.prose blockquote {
+	border-left: 4px solid #ccc;
+	margin-left: 0;
+	padding-left: 1em;
+}
+.prose a {
+	color: #0366d6;
+	text-decoration: underline;
+}
+.prose a:hover {
+	text-decoration: underline;
+}
